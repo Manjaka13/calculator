@@ -1,5 +1,5 @@
 <template>
-	<button class="calc-button" @click="atButtonClick">
+	<button :class="className" @click="atButtonClick">
 		<slot></slot>
 	</button>
 </template>
@@ -13,6 +13,17 @@ import "@/styles/calc-button.scss";
 
 export default {
 	name: "CalcButton",
+	data() {
+		const currentItem = this.$slots.default[0].text;
+		return {
+			className:
+				currentItem === "="
+					? "calc-button calc-button--equal"
+					: currentItem === "AC"
+					? "calc-button calc-button--ac"
+					: "calc-button",
+		};
+	},
 	methods: {
 		atButtonClick() {
 			const item = this.$slots.default[0].text;
