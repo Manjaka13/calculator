@@ -1,0 +1,26 @@
+/**
+ * Footer styles
+ */
+
+.calc-footer {
+	@include flex-row(center, center);
+	margin-top: 20px;
+
+	&__left,
+	&__right {
+		color: $color-text;
+		.link {
+			color: $color-theme;
+			text-decoration: none;
+			font-weight: bold;
+		}
+	}
+
+	&__left {
+		margin-right: 5px;
+	}
+
+	&__right {
+		margin-left: 5px;
+	}
+}
