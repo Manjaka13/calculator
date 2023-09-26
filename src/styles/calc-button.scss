@@ -16,6 +16,11 @@
 	font-size: $fs-button;
 	background: #f9f9f9;
 
+	embed,
+	img {
+		pointer-events: none;
+	}
+
 	&:hover {
 		box-shadow:
 			-5px -5px 10px #fff,
@@ -35,5 +40,12 @@
 
 	&--ac {
 		color: $color-theme;
+	}
+
+	&--del {
+		embed {
+			filter: invert(42%) sepia(91%) saturate(502%) hue-rotate(349deg)
+				brightness(101%) contrast(102%);
+		}
 	}
 }

@@ -2,7 +2,9 @@ template
 <template>
 	<ul class="calc-pad">
 		<li class="calc-pad__item" v-for="sign in pad" :key="sign">
-			<CalcButton>{{ sign }}</CalcButton>
+			<CalcButton @buttonClick="fireUp"
+				>{{ sign != "Del" ? sign : "" }}<embed v-if="sign === 'Del'" :src="eraser"
+			/></CalcButton>
 		</li>
 	</ul>
 </template>
@@ -10,6 +12,7 @@ template
 <script>
 import CalcButton from "@/components/CalcButton";
 import "@/styles/calc-pad.scss";
+import eraser from "../../public/eraser.svg";
 
 /**
  * Calculator button list
@@ -22,11 +25,12 @@ export default {
 	},
 	data() {
 		return {
+			eraser,
 			pad: [
 				"AC",
 				"Del",
 				"%",
-				"/",
+				"÷",
 				"7",
 				"8",
 				"9",
@@ -45,6 +49,11 @@ export default {
 				"=",
 			],
 		};
+	},
+	methods: {
+		fireUp(value) {
+			this.$emit("buttonClick", value || "Del");
+		},
 	},
 };
 </script>

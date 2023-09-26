@@ -21,6 +21,8 @@ export default {
 					? "calc-button calc-button--equal"
 					: currentItem === "AC"
 					? "calc-button calc-button--ac"
+					: currentItem === ""
+					? "calc-button calc-button--del"
 					: "calc-button",
 		};
 	},
