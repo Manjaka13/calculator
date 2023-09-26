@@ -1,0 +1,24 @@
+/**
+ * Calculator screen styles
+ */
+
+.calc-screen {
+	height: 200px;
+	background: rgb(245, 245, 245);
+	position: relative;
+	margin-bottom: 20px;
+	padding: 20px;
+	padding-bottom: 0;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 100%;
+		width: 100%;
+		height: 100%;
+		background-image: radial-gradient(
+			120% 120px at 50% -70px,
+			rgb(245, 245, 245) 75%,
+			transparent 75%
+		);
+	}
+}

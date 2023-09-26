@@ -1,6 +1,7 @@
 <template>
 	<div id="app" class="app">
 		<div class="app__container">
+			<CalcScreen />
 			<CalcPad />
 		</div>
 	</div>
@@ -8,6 +9,7 @@
 
 <script>
 import CalcPad from "@/components/CalcPad.vue";
+import CalcScreen from "@/components/CalcScreen.vue";
 import "@/styles/app.scss";
 
 /**
@@ -17,6 +19,7 @@ import "@/styles/app.scss";
 export default {
 	name: "App",
 	components: {
+		CalcScreen,
 		CalcPad,
 	},
 };
