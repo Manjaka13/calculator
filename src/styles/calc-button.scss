@@ -46,9 +46,8 @@
 	}
 
 	&:active {
-		box-shadow:
-			5px 5px 10px #e0e0e0,
-			-5px -5px 10px hsla(0, 0%, 38%, 0.4);
+		background: $color-theme;
+		color: white;
 	}
 
 	&--equal {
