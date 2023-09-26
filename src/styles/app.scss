@@ -1,0 +1,17 @@
+/**
+ * Block styles
+ */
+
+.app {
+	min-height: 100%;
+	font-family: Avenir, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	&__container {
+		box-shadow: 0px 0px 40px rgb(230, 230, 230);
+		padding: 20px;
+		background: white;
+		border-radius: 20px;
+	}
+}

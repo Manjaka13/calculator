@@ -1,0 +1,30 @@
+/**
+ * Calculator button style
+ */
+
+.calc-button {
+	@include transition;
+	width: $size-button;
+	height: $size-button;
+	border: none;
+	border-radius: $size-button;
+	box-shadow:
+		-5px -5px 10px #fff,
+		5px 5px 10px hsla(0, 0%, 58.8%, 0.4);
+	color: #646464;
+	cursor: pointer;
+	font-size: $fs-button;
+	background: #f9f9f9;
+
+	&:hover {
+		box-shadow:
+			-5px -5px 10px #fff,
+			5px 5px 10px hsla(0, 0%, 31%, 0.4);
+	}
+
+	&:active {
+		box-shadow:
+			5px 5px 10px #e0e0e0,
+			-5px -5px 10px hsla(0, 0%, 38%, 0.4);
+	}
+}
