@@ -24,6 +24,22 @@
 		);
 	}
 
+	&::after {
+		content: "Calculator";
+		padding: 5px 20px;
+		border-radius: 10px;
+		background: $color-theme;
+		color: white;
+		margin: auto;
+		top: 20px;
+		position: absolute;
+		left: 0;
+		right: 0;
+		width: 200px;
+		text-align: center;
+		font-size: 20px;
+	}
+
 	&__before,
 	&__current {
 		text-align: right;
