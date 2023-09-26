@@ -8,4 +8,10 @@
 	grid-column-gap: 20px;
 	grid-row-gap: 10px;
 	padding: 20px;
+	text-align: center;
+
+	@include screen-x(350px) {
+		grid-row-gap: 5px;
+		grid-column-gap: 5px;
+	}
 }

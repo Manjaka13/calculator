@@ -10,6 +10,15 @@
 	margin-bottom: 20px;
 	@include flex-col(flex-end, flex-end);
 
+	@include screen-x(768px) {
+		flex: 1;
+	}
+
+	@include screen-y(600px) {
+		flex: 1;
+		height: auto;
+	}
+
 	&::before {
 		content: "";
 		position: absolute;
@@ -38,6 +47,9 @@
 		width: 200px;
 		text-align: center;
 		font-size: 20px;
+		@include screen-y(600px) {
+			display: none;
+		}
 	}
 
 	&__before,

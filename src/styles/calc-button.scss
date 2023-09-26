@@ -16,6 +16,24 @@
 	font-size: $fs-button;
 	background: #f9f9f9;
 
+	@include screen-x(420px) {
+		width: $size-button2;
+		height: $size-button2;
+		font-size: $fs-button2;
+	}
+
+	@include screen-y(768px) {
+		width: $size-button2;
+		height: $size-button2;
+		font-size: $fs-button2;
+	}
+
+	@include screen-x(350px) {
+		width: $size-button3;
+		height: $size-button3;
+		font-size: $fs-button3;
+	}
+
 	embed,
 	img {
 		pointer-events: none;

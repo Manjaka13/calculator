@@ -4,7 +4,16 @@
 
 .calc-footer {
 	@include flex-row(center, center);
-	margin-top: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+	@include screen-x(768px) {
+		display: none;
+	}
+
+	@include screen-y(768px) {
+		display: none;
+	}
 
 	&__left,
 	&__right {

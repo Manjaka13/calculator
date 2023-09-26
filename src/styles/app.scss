@@ -3,16 +3,29 @@
  */
 
 .app {
+	@include flex-col(center, center);
 	max-width: 420px;
-	min-height: 100%;
-	font-family: Avenir, Helvetica, Arial, sans-serif;
+	min-height: 100vh;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+
+	@include screen-x(768px) {
+		max-width: 100%;
+		width: 100%;
+	}
 
 	&__container {
 		box-shadow: 0px 0px 70px #bbbbbb;
 		background: white;
 		border-radius: 20px;
 		overflow: hidden;
+		@include screen-x(768px) {
+			@include flex-col(initial, initial);
+			flex: 1;
+			width: 100%;
+		}
+		@include screen-y(768px) {
+			flex: 1;
+		}
 	}
 }
