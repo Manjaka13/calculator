@@ -12,6 +12,7 @@
 import CalcPad from "@/components/CalcPad.vue";
 import CalcScreen from "@/components/CalcScreen.vue";
 import CalcFooter from "@/components/CalcFooter.vue";
+import { CALC_DIGITS, CALC_SIGNS, CALC_ACTIONS } from "@/helpers/const";
 import "@/styles/app.scss";
 
 /**
@@ -33,25 +34,37 @@ export default {
 		CalcFooter,
 	},
 	methods: {
+		// Checks if current item is a digit
 		isDigit(item) {
-			const values = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+			const values = CALC_DIGITS;
 			return values.includes(item);
 		},
+		// Checks if current item is a sign
 		isSign(item) {
-			const signs = ["+", "-", "x", "÷", "%"];
+			const signs = CALC_SIGNS;
 			return signs.includes(item);
 		},
+		// Checks if current item is an action (except for ".")
 		isAction(item) {
-			const actions = ["AC", "Del", "+/-", "="];
+			const actions = CALC_ACTIONS;
 			return actions.includes(item);
 		},
+		// Gets last char from string
 		getLastChar(str) {
 			return str && str.length > 0 ? str[str.length - 1] : "";
 		},
+		// Checks if string has dots "."
 		hasDot(str) {
 			const arr = str.split("");
 			return arr.includes(".") || arr.includes(",");
 		},
+		// Gets the number of digits after decimal point
+		decimalCount(number) {
+			const numberAsString = number.toString();
+			if (numberAsString.includes(".")) return numberAsString.split(".")[1].length;
+			return 0;
+		},
+		// Manage entries (digits, signs, actions)
 		handleDigit(c) {
 			if (this.isDigit(c)) this.current += c;
 		},
@@ -61,11 +74,6 @@ export default {
 				if (this.current.length === 0) this.current += "0" + c;
 				else if (!this.isSign(lastChar)) this.current += c;
 			}
-		},
-		decimalCount(number) {
-			const numberAsString = number.toString();
-			if (numberAsString.includes(".")) return numberAsString.split(".")[1].length;
-			return 0;
 		},
 		handleAction(c) {
 			let d, s, arr;
@@ -109,6 +117,7 @@ export default {
 				}
 			}
 		},
+		// Triggered on every clicks on the calculator pad
 		padClick(c) {
 			if ((c === "." || c === ",") && !this.hasDot(this.current)) {
 				if (this.current.length === 0) this.current += "0" + c;

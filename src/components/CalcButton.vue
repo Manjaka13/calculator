@@ -27,6 +27,7 @@ export default {
 		};
 	},
 	methods: {
+		// Custom emit at button click
 		atButtonClick() {
 			const item = this.$slots.default[0].text;
 			this.$emit("buttonClick", item);

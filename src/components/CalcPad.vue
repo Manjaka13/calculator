@@ -13,6 +13,7 @@ template
 import CalcButton from "@/components/CalcButton";
 import "@/styles/calc-pad.scss";
 import eraser from "../../public/eraser.svg";
+import { CALC_PAD } from "@/helpers/const"
 
 /**
  * Calculator button list
@@ -26,28 +27,7 @@ export default {
 	data() {
 		return {
 			eraser,
-			pad: [
-				"AC",
-				"Del",
-				"%",
-				"÷",
-				"7",
-				"8",
-				"9",
-				"x",
-				"4",
-				"5",
-				"6",
-				"-",
-				"1",
-				"2",
-				"3",
-				"+",
-				"0",
-				".",
-				"+/-",
-				"=",
-			],
+			pad: CALC_PAD,
 		};
 	},
 	methods: {
